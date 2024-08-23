@@ -5,7 +5,7 @@
 .about-container {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 32px;
 }
 
 .about-info-wrapper {
@@ -88,8 +88,9 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 28px;
-  height: 28px;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,6 +98,11 @@
   padding: 0;
   margin: 0;
   background-color: transparent;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-arrow-btn-next:hover {
+  background-color: var(--cards);
 }
 
 .about-skills-container {
@@ -110,15 +116,13 @@
 .about-arrow-icon {
   width: 100%;
   height: 100%;
-  fill: rgba(250, 250, 250, 0.6);
+  fill: transparent;
   stroke: rgba(250, 250, 250, 0.6);
   z-index: 900;
-  transition: fiil 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-arrow-btn-next:hover .about-arrow-icon {
-  fill: var(--main-text);
   stroke: var(--main-text);
 }
 
@@ -129,6 +133,10 @@
 @media screen and (min-width: 768px) {
   .about-section {
     padding-top: 43px;
+  }
+
+  .about-container {
+    gap: 64px;
   }
 
   .about-text-wrapper {
